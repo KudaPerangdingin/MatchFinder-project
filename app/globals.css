@@ -1,0 +1,185 @@
+/* ===== VARIABEL TEMA INDUSTRIAL ===== */
+:root {
+  /* Palet Warna Industrial */
+  --color-bg-primary: #0f0f12;
+  --color-bg-secondary: #1a1d23;
+  --color-surface: #242830;
+  --color-border: #3a3f4b;
+
+  /* Aksen Menyala */
+  --color-accent-primary: #ff6b35;
+  --color-accent-secondary: #00a8cc;
+  --color-accent-danger: #e84118;
+
+  /* Teks */
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #b0b7c3;
+  --color-text-muted: #7a8291;
+
+  /* Efek */
+  --shadow-industrial: 0 6px 12px rgba(0, 0, 0, 0.4);
+  --border-thick: 2px solid var(--color-border);
+}
+
+/* ===== RESET & GAYA DASAR ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* NORMAL, jangan 3.5rem! */
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: 'Segoe UI', 'Roboto', system-ui, sans-serif;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ===== TIPOGRAFI INDUSTRIAL ===== */
+h1, h2, h3, h4 {
+  font-family: 'Montserrat', 'Impact', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--color-text-primary), #aaa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ===== KOMPONEN UTAMA ===== */
+
+/* --- KARTU seperti Plat Logam --- */
+.industrial-card {
+  background-color: var(--color-surface);
+  border: var(--border-thick);
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-industrial);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* Efek kilap logam di kartu */
+.industrial-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.6s;
+}
+
+.industrial-card:hover::before {
+  left: 100%;
+}
+
+/* --- TOMBOL seperti Tombol Kontrol --- */
+.industrial-btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.3);
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.industrial-btn-primary {
+  background-color: var(--color-accent-primary);
+  color: #000;
+}
+
+.industrial-btn-primary:hover {
+  background-color: #ff8540;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.3);
+}
+
+.industrial-btn-secondary {
+  background-color: transparent;
+  color: var(--color-accent-secondary);
+  border: 2px solid var(--color-accent-secondary);
+}
+
+.industrial-btn-secondary:hover {
+  background-color: rgba(0, 168, 204, 0.1);
+}
+
+/* --- BADGE / TAG seperti Stiker Safety --- */
+.industrial-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: var(--color-accent-danger);
+  color: white;
+  border-radius: 0;
+}
+
+/* --- NAVBAR --- */
+.industrial-nav {
+  background-color: var(--color-bg-primary);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-bottom: 3px solid var(--color-accent-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.industrial-nav h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  letter-spacing: -1px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.industrial-nav span {
+  color: var(--color-accent-primary);
+}
+
+/* --- UTILITY CLASSES --- */
+.text-accent-primary {
+  color: var(--color-accent-primary);
+}
+
+.text-accent-secondary {
+  color: var(--color-accent-secondary);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
